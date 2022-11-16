@@ -1,0 +1,35 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: An AWS Serverless Specification template describing your function.
+Resources:
+  searchPhotos:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      FunctionName: search_photos
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.9
+      CodeUri: ./search_photos
+      Description: 'Lambda function for smart-photos-album searching photos'
+      MemorySize: 128
+      Timeout: 15
+      Role: 'arn:aws:iam::725740804677:role/admin-lambda'
+      Environment:
+        Variables:
+          REGION: us-east-1
+
+  indexPhotos:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      FunctionName: assignment2_lf1
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.9
+      CodeUri: ./assignment2_lf1
+      Description: 'Lambda function for smart-photos-album indexing photos'
+      MemorySize: 128
+      Timeout: 120
+      Role: 'arn:aws:iam::725740804677:role/admin-lambda'
+      Environment:
+        Variables:
+          REGION: us-east-1
+    Bucket1:
+      Type: 'AWS::S3::Bucket'
