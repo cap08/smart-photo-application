@@ -1,0 +1,8 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - aws cloudformation package --template-file lambda-template.yml --s3-bucket cloud-hw2-lambda-pipeline-bucket --output-template-file lambda-output-template.yml
+artifacts:
+  files:
+    - lambda-output-template.yml
