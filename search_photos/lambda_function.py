@@ -14,7 +14,7 @@ from elasticsearch import Elasticsearch, RequestsHttpConnection
     
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
-#Test
+#Cloud Demo
 headers = { "Content-Type": "application/json" }
 host = 'search-photos-v75p4n3eibdl47fzkvk62q5zdm.us-east-1.es.amazonaws.com'
 region = 'us-east-1'
